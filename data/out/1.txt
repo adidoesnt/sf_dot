@@ -1,0 +1,5 @@
+ id  | make  |  model  | year | license_plate 
+-----+-------+---------+------+---------------
+ 766 | Honda | Odyssey | 2004 | yqtevIDQe5
+(1 row)
+

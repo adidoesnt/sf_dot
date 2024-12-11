@@ -1,0 +1,25 @@
+ id  |  make  | model | year | license_plate 
+-----+--------+-------+------+---------------
+   1 | Toyota | Camry | 2009 | F76Ik59s
+ 616 | Toyota | Camry | 1993 | 129P5T
+(2 rows)
+
+DROP INDEX
+                                             QUERY PLAN                                             
+----------------------------------------------------------------------------------------------------
+ Seq Scan on vehicles  (cost=0.00..26.00 rows=1 width=39) (actual time=0.005..0.131 rows=2 loops=1)
+   Filter: ((make = 'Toyota'::text) AND (model = 'Camry'::text))
+   Rows Removed by Filter: 998
+ Planning Time: 0.024 ms
+ Execution Time: 0.137 ms
+(5 rows)
+
+CREATE INDEX
+                                                       QUERY PLAN                                                       
+------------------------------------------------------------------------------------------------------------------------
+ Index Scan using vehicles_idx on vehicles  (cost=0.28..8.29 rows=1 width=39) (actual time=0.026..0.028 rows=2 loops=1)
+   Index Cond: ((make = 'Toyota'::text) AND (model = 'Camry'::text))
+ Planning Time: 0.189 ms
+ Execution Time: 0.041 ms
+(4 rows)
+

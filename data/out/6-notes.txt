@@ -1,0 +1,25 @@
+ id  |  make  | model | year | license_plate 
+-----+--------+-------+------+---------------
+   1 | Toyota | Camry | 2009 | F76Ik59s
+ 615 | Toyota | Camry | 1993 | SFE2301X
+ 616 | Toyota | Camry | 1993 | 129P5T
+(2 rows)
+
+---
+
+vehicles
+ id  | edition_id | license_plate 
+-----+------------+---------------
+   1 |        1   | F76Ik59s
+ 616 |        2   | 129P5T
+
+editions
+id | model_id | year
+---+----------+-------
+ 1 | 1        | 1993
+ 2 | 1        | 2009
+
+models
+ id  |  make  | model 
+ ----+--------+-------
+   1 | Toyota | Camry
